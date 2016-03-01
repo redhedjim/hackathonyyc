@@ -24,10 +24,10 @@ http.listen(process.env.PORT || 1337, function(){
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  socket.on('msg', function(msg){
-  	console.log(msg);
+  socket.on('sendMsg', function(ret){
+  	console.log(ret);
 
-  	socket.emit('msg',"World");
+  	socket.emit('receiveMsg',"World");
   });
 });
 

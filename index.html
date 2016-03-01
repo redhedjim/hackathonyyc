@@ -22,17 +22,17 @@
 		});
 
 		app.controller("myCtrl", function($scope, socketIO) {
-		    $scope.msg = "Hello";
+		    $scope.myString = "Hello";
 		    
 
 		    $scope.emit = function() {
 		    	alert("send hello");
-		    	socketIO.emit('msg', $scope.msg);	
+		    	socketIO.emit('sendMsg', $scope.myString);	
 		    }
 		    
-		    socketIO.on('msg', function(msg) {
+		    socketIO.on('receiveMsg', function(ret) {
 		    	$scope.$apply(function(){
-		    		$scope.msg = $scope.msg + " " + msg;
+		    		$scope.myString = $scope.myString + " " + ret;
 		    	});
 		    });
       
@@ -44,8 +44,8 @@
   <body>
 
   	<div ng-app="myApp" ng-controller="myCtrl">
-    	<h1>X-Factor YYC</h1>
-    	<p>{{msg}}</p>
+    	<h1>X-Factor YYC11</h1>
+    	<p>{{myString}}</p>
     	<button type="button" ng-click="emit();">Send Msg</button>
     </div>
 
