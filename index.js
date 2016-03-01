@@ -50,7 +50,7 @@ MongoClient.connect(uri, function (err, db) {
 
     collection = db.collection('xfactoryyc1');
 
-    var qry = { "email": objmsg.email };
+    var qry = { "Community": "Rideau Park" };
     collection.find( qry2 ).toArray(function(err, docs) {  
       
       if (docs.length > 0) {
