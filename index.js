@@ -51,11 +51,11 @@ MongoClient.connect(uri, function (err, db) {
     collection = db.collection('xfactoryyc1');
 
     var qry = { "Community": "Rideau Park" };
-    collection.find( qry2 ).toArray(function(err, docs) {  
+    collection.find( qry ).toArray(function(err, docs) {  
       
       if (docs.length > 0) {
         for (j=0; j<docs.length; j++) {             
-          console.log(docs[j].Community);
+          console.log("population: " + docs[j].Population + ",  Median Income: " + docs[j].Median_household_income);
         }
       }
 
