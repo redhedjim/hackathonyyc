@@ -59,7 +59,7 @@ MongoClient.connect(uri, function (err, db) {
         }
       }
 
-    } 
+    }); 
 
 
   }
