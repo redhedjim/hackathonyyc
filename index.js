@@ -46,5 +46,21 @@ MongoClient.connect(uri, function (err, db) {
   } else {
     //HURRAY!! We are connected. :)
     console.log('Connection established to', uri);
+
+
+    collection = db.collection('xfactoryyc1');
+
+    var qry = { "email": objmsg.email };
+    collection.find( qry2 ).toArray(function(err, docs) {  
+      
+      if (docs.length > 0) {
+        for (j=0; j<docs.length; j++) {             
+          console.log(docs[j].Community);
+        }
+      }
+
+    } 
+
+
   }
 });
