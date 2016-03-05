@@ -1,7 +1,7 @@
 var express = require('express')  // npm install express
 var app = express()
 
-//app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
@@ -33,7 +33,7 @@ io.on('connection', function(socket){
 
 
 
-var mongodb = require('mongodb'); // npm install mongodb 
+var mongodb = require('mongodb'); // npm install mongodb
 var MongoClient = mongodb.MongoClient;
 
 var uri = 'mongodb://xfyyc:xfyyc@ds037622.mongolab.com:37622/heroku_0dntxs3h';
@@ -51,15 +51,15 @@ MongoClient.connect(uri, function (err, db) {
     collection = db.collection('xfactoryyc1');
 
     var qry = { "Community": "Rideau Park" };
-    collection.find( qry ).toArray(function(err, docs) {  
-      
+    collection.find( qry ).toArray(function(err, docs) {
+
       if (docs.length > 0) {
-        for (j=0; j<docs.length; j++) {             
+        for (j=0; j<docs.length; j++) {
           console.log("population: " + docs[j].Population + ",  Median Income: " + docs[j].Median_household_income);
         }
       }
 
-    }); 
+    });
 
 
   }
