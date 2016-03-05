@@ -71,10 +71,26 @@ io.on('connection', function(socket){
   mySocket = socket;
   socket.on('sendMsg', function(ret){
     console.log(ret);
-    socket.emit('receiveMsg',"World2");
+
+    //socket.emit('receiveMsg',"World2");
+
+    if (true) {  // THIS IS FOR TESTING!!!!!!
+      var qry = { "id":2 };
+      Input.find( qry ).toArray(function(err, docs) {  
+        if (docs.length > 0) {
+          for (j=0; j<docs.length; j++) {        
+            mySocket.emit('receiveMsg', JSON.stringify(docs[j]));  //Server2Client
+          }
+        }
+      });
+    }
+
+
   });
 
 });
+
+
 
 //Input = db.collection('Input');
 setInterval(function() {
