@@ -18,7 +18,7 @@ app.controller("myCtrl", function($scope, socketIO) {
     $scope.emit = function() {
       alert("send hello");
       socketIO.emit('sendMsg', $scope.myString);
-    }
+    }   
 
     socketIO.on('receiveMsg', function(ret) {
       $scope.$apply(function(){
