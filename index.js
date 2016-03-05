@@ -1,11 +1,8 @@
 var express = require('express')  // npm install express
 var app = express()
 
-<<<<<<< HEAD
 app.set('port', (process.env.PORT || 5000))
-=======
 //app.set('port', (process.env.PORT || 5000))  // uncomment me for local host and use port 5000
->>>>>>> 5ee495079dade0922e681914fa005a1dc3b33ab9
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
@@ -51,14 +48,9 @@ MongoClient.connect(uri, function (err, db) {
         }
       }
 
-<<<<<<< HEAD
     });
-=======
-    });    
-
-  }
+  }   
 });
->>>>>>> 5ee495079dade0922e681914fa005a1dc3b33ab9
 
 
 var Input;
@@ -70,8 +62,6 @@ MongoClient.connect(uri, function (err, db) {
     Input = db.collection('Input');
   }
 });
-<<<<<<< HEAD
-=======
 
 
 
@@ -127,5 +117,3 @@ setInterval(function() {
 
 
 
-
->>>>>>> 5ee495079dade0922e681914fa005a1dc3b33ab9
