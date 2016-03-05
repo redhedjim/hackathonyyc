@@ -2,7 +2,7 @@ var express = require('express')  // npm install express
 var app = express()
 
 
-//app.set('port', (process.env.PORT || 5000))  // uncomment me for local host and use port 5000
+app.set('port', (process.env.PORT || 5000))  // uncomment me for local host and use port 5000
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
@@ -96,7 +96,7 @@ setInterval(function() {
             console.log(err);
           } else {
 
-            mySocket.emit('receiveMsg', "ans="+JSON.stringify(docs[j].answer));  //Server2Client
+            mySocket.emit('receiveMsg', JSON.stringify(docs[j]));  //Server2Client
             console.log("emitted to client");
 
           } 
