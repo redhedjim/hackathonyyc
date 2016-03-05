@@ -24,6 +24,7 @@ app.controller("myCtrl", function($scope, socketIO) {
       $scope.$apply(function(){
         //$scope.ret = JSON.stringify(ret);
         $scope.ret = JSON.parse(ret);
+        var answer = JSON.parse($scope.ret.answer);
 
         $scope.myString = $scope.myString + " " + ret;
       });
