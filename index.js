@@ -2,7 +2,7 @@ var express = require('express')  // npm install express
 var app = express()
 
 
-//app.set('port', (process.env.PORT || 5000))  // uncomment me for local host and use port 5000
+//app.set('port', (process.env.PORT || 5000))  // comment me for local host and use port 5000
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
@@ -72,7 +72,6 @@ io.on('connection', function(socket){
   socket.on('sendMsg', function(ret){
     console.log(ret);
 
-    //socket.emit('receiveMsg',"World2");
 
     if (true) {  // THIS IS FOR TESTING!!!!!!
       var qry = { "id":2 };
@@ -83,6 +82,9 @@ io.on('connection', function(socket){
           }
         }
       });
+    }
+    else {
+      socket.emit('receiveMsg',"World2");
     }
 
 

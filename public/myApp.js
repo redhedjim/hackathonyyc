@@ -12,6 +12,7 @@ var app = angular.module("myApp", [])
 
 app.controller("myCtrl", function($scope, socketIO) {
     $scope.myString = "Hello";
+    $scope.ret = "";
 
 
     $scope.emit = function() {
@@ -21,8 +22,11 @@ app.controller("myCtrl", function($scope, socketIO) {
 
     socketIO.on('receiveMsg', function(ret) {
       $scope.$apply(function(){
+        $scope.ret = JSON.Strinfigy(ret);
+
         $scope.myString = $scope.myString + " " + ret;
       });
     });
+    
 
 });
