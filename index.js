@@ -1,7 +1,7 @@
 var express = require('express')  // npm install express
 var app = express()
 
-app.set('port', (process.env.PORT || 5000))
+
 //app.set('port', (process.env.PORT || 5000))  // uncomment me for local host and use port 5000
 app.use(express.static(__dirname + '/public'))
 
