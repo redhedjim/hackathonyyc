@@ -22,7 +22,7 @@ app.controller("myCtrl", function($scope, socketIO) {
 
     socketIO.on('receiveMsg', function(ret) {
       $scope.$apply(function(){
-        $scope.ret = JSON.Stringify(ret);
+        $scope.ret = JSON.stringify(ret);
 
         $scope.myString = $scope.myString + " " + ret;
       });
